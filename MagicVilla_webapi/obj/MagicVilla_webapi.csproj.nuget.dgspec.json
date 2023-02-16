@@ -1,0 +1,70 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\.net\\MagicVilla_API\\MagicVilla_webapi\\MagicVilla_webapi.csproj": {}
+  },
+  "projects": {
+    "C:\\.net\\MagicVilla_API\\MagicVilla_webapi\\MagicVilla_webapi.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\.net\\MagicVilla_API\\MagicVilla_webapi\\MagicVilla_webapi.csproj",
+        "projectName": "MagicVilla_webapi",
+        "projectPath": "C:\\.net\\MagicVilla_API\\MagicVilla_webapi\\MagicVilla_webapi.csproj",
+        "packagesPath": "C:\\Users\\ravi.singh_oncehub\\.nuget\\packages\\",
+        "outputPath": "C:\\.net\\MagicVilla_API\\MagicVilla_webapi\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\ravi.singh_oncehub\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[6.2.3, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.405\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
