@@ -1,7 +1,15 @@
+using AutoMapper;
+using MagicVilla_webapi;
+using MagicVilla_webapi.data;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-
+builder.Services.AddDbContext<ApplicationDbContext>(option=>
+{option.UseSqlServer(builder.Configuration.GetConnectionString("Constring"));
+});
+builder.Services.AddAutoMapper(typeof(MappingConfig));
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();

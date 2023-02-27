@@ -1,4 +1,5 @@
 using System.Linq;
+using AutoMapper;
 using MagicVilla_webapi.data;
 using MagicVilla_webapi.Models;
 using MagicVilla_webapi.Models.Dto;
@@ -8,6 +9,13 @@ namespace MagicVilla_webapi.Controllers
 {   [Route("api/VillaAPI")]
     [ApiController]
     public class villaAPIController:ControllerBase{
+
+        private readonly ApplicationDbContext _db;
+        private readonly IMapper _mapper;
+        public villaAPIController(ApplicationDbContext db,IMapper mapper){
+           _db=db; 
+           _mapper=mapper;
+        }
         private readonly ILogger<villaAPIController> _logger;
            public villaAPIController(ILogger<villaAPIController> logger){
                 _logger=logger;
@@ -15,19 +23,19 @@ namespace MagicVilla_webapi.Controllers
         [HttpGet]
         public ActionResult<IEnumerable<VillaDTO>> GetVillas(){ 
             _logger.LogInformation("Getting all values");
-            return Ok(VillaStore.VillaList);
+            return Ok(_db.Villa.ToList());
         } 
         [HttpGet("{id:int}",Name ="GetVillas")]
         public ActionResult<VillaDTO> GetVillas(int id){
              _logger.LogError("Get villa error with id"+id);
-            return Ok(VillaStore.VillaList.FirstOrDefault(u=>u.id==id));
+            return Ok(_db.Villa.FirstOrDefault(u=>u.id==id));
         }
         [HttpPost()]
         public ActionResult<VillaDTO> CreateVilla([FromBody]VillaDTO VillaDTO){
             // if(!ModelState.IsValid){
             //     return BadRequest(ModelState);
             // }
-            if(VillaStore.VillaList.FirstOrDefault(u=>u.name.ToLower()==VillaDTO.name.ToLower())!=null){
+            if(_db.Villa.FirstOrDefault(u=>u.name.ToLower()==VillaDTO.name.ToLower())!=null){
                 ModelState.AddModelError("CustomError","VillaAlready Exist");
             }
             if(VillaDTO==null){
@@ -64,6 +72,6 @@ namespace MagicVilla_webapi.Controllers
         // [HttpPatch("{id:int}",Name="UpdatePartialVilla")]
         // public IActionResult UpdatePartialVilla(int id,JsonPatchDocument<>){
 
-        // }
+        // }    
     }
 }

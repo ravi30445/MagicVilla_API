@@ -11,5 +11,6 @@ namespace MagicVilla_webapi.Models{
         public int sqft{get;set;}
         public string details{get;set;}
         public int occupancy{get;set;}
+        public DateTime UpdatedDate { get; internal set; }
     }
 }
