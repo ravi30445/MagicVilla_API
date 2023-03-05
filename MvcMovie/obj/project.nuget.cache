@@ -1,8 +1,17 @@
 {
   "version": 2,
-  "dgSpecHash": "SfEhGBnunys8f/hNkl6+eSrHLUbsl15Qw+Q/4TTumbbw9VTn94euMu5XvlItmjzB/BnDdc8HeiSlOqPHsvdE9w==",
+  "dgSpecHash": "vBdPJJ6+XlSKoY2rszaOt/MGznWMHFRLBpivEBVcYeoxH85Ons3NhijtqyGKku1n79JWkyi10TAp5YqLQxXz7g==",
   "success": true,
-  "projectFilePath": "C:\\.net\\MagicVilla_API\\MvcMovie\\MvcMovie.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\.net\\MvcMovie\\MvcMovie.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\ravi.singh_oncehub\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
+    "C:\\Users\\ravi.singh_oncehub\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.0\\automapper.extensions.microsoft.dependencyinjection.12.0.0.nupkg.sha512",
+    "C:\\Users\\ravi.singh_oncehub\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
+    "C:\\Users\\ravi.singh_oncehub\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\6.0.0\\microsoft.extensions.dependencyinjection.abstractions.6.0.0.nupkg.sha512",
+    "C:\\Users\\ravi.singh_oncehub\\.nuget\\packages\\microsoft.extensions.options\\6.0.0\\microsoft.extensions.options.6.0.0.nupkg.sha512",
+    "C:\\Users\\ravi.singh_oncehub\\.nuget\\packages\\microsoft.extensions.primitives\\6.0.0\\microsoft.extensions.primitives.6.0.0.nupkg.sha512",
+    "C:\\Users\\ravi.singh_oncehub\\.nuget\\packages\\newtonsoft.json\\13.0.2\\newtonsoft.json.13.0.2.nupkg.sha512",
+    "C:\\Users\\ravi.singh_oncehub\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512"
+  ],
   "logs": []
 }
