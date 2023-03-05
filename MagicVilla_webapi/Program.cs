@@ -13,6 +13,7 @@ builder.Services.AddDbContext<ApplicationDbContext>(option=>
 {option.UseSqlServer(builder.Configuration.GetConnectionString("Constring"));
 });
 builder.Services.AddScoped<IVillaRepository,VillaRepository>();
+builder.Services.AddScoped<IVillaNumberRepository,VillaNumberRepository>();
 builder.Services.AddAutoMapper(typeof(MappingConfig));
 Log.Logger=new LoggerConfiguration().MinimumLevel.Debug().WriteTo.File("log/VillaLogs.txt",rollingInterval:RollingInterval.Day).CreateLogger();
 builder.Host.UseSerilog();

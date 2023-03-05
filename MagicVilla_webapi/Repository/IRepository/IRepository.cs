@@ -1,16 +1,15 @@
-
 using MagicVilla_webapi.Models;
 using System.Linq.Expressions;
 
-namespace MagicVilla_VillaAPI.Repository.IRepostiory
+namespace MagicVilla_webapi.Repository.IRepostiory
 {
-    public interface IVillaRepository
+    public interface IRepository<T> where T:class
     {
-        Task<List<Villa>> GetAllAsync(Expression<Func<Villa,bool>> filter=null);
-         Task<Villa> GetAsync(Expression<Func<Villa,bool>> filter=null,bool tracked=true);
-        Task CreateAsync(Villa entity);
-        Task RemoveAsync(Villa entity);
-        Task UpdateAsync(Villa entity);
-        Task SaveAsync();
+         Task<List<T>> GetAllAsync(Expression<Func<T,bool>> filter=null,string? includeProperties=null);
+         Task<T> GetAsync(Expression<Func<T,bool>> filter=null,bool tracked=true,string includeProperties=null);
+        Task<T> CreateAsync(T entity);
+        Task<T> RemoveAsync(T entity);
+       // Task<T> UpdateAsync(T entity);
+        Task<T> SaveAsync();
     }
 }

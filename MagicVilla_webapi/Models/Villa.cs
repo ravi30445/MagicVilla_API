@@ -6,6 +6,7 @@ namespace MagicVilla_webapi.Models{
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int id{get;set;}
+        [Required]
         public string name{get;set;}
         public double rate{get;set;}
         public int sqft{get;set;}

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\.net\\MagicVilla_API\\magicVilla_webapi\\MagicVilla_webapi.csproj": {}
+    "C:\\.net\\MagicVilla_API\\MagicVilla_webapi\\MagicVilla_webapi.csproj": {}
   },
   "projects": {
-    "C:\\.net\\MagicVilla_API\\magicVilla_webapi\\MagicVilla_webapi.csproj": {
+    "C:\\.net\\MagicVilla_API\\MagicVilla_webapi\\MagicVilla_webapi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\.net\\MagicVilla_API\\magicVilla_webapi\\MagicVilla_webapi.csproj",
+        "projectUniqueName": "C:\\.net\\MagicVilla_API\\MagicVilla_webapi\\MagicVilla_webapi.csproj",
         "projectName": "MagicVilla_webapi",
-        "projectPath": "C:\\.net\\MagicVilla_API\\magicVilla_webapi\\MagicVilla_webapi.csproj",
+        "projectPath": "C:\\.net\\MagicVilla_API\\MagicVilla_webapi\\MagicVilla_webapi.csproj",
         "packagesPath": "C:\\Users\\ravi.singh_oncehub\\.nuget\\packages\\",
-        "outputPath": "C:\\.net\\MagicVilla_API\\magicVilla_webapi\\obj\\",
+        "outputPath": "C:\\.net\\MagicVilla_API\\MagicVilla_webapi\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\ravi.singh_oncehub\\AppData\\Roaming\\NuGet\\NuGet.Config"

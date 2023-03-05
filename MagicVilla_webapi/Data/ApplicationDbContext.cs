@@ -6,6 +6,7 @@ namespace MagicVilla_webapi.data{
             
         }
         public DbSet<Villa>Villa{get;set;}
+        public DbSet<VillaNumber> VillaNumbers{get;set;}
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
