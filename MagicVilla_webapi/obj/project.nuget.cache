@@ -1,14 +1,15 @@
 {
   "version": 2,
-  "dgSpecHash": "phdab7BvFQkDTAvd9fVn1ukYGrWCnFI0nEQT5Qk3OobS6lB9d8WUHIlgo94zLMyXirbb1Ak0ye0t0ulAh//LwQ==",
+  "dgSpecHash": "SsJ6wFcsrfs0m+S0bI2kPJVwWNVhTZvu6nhg0wDGfEqso7KhWNZqcI5rCPmdHuqNzN2zbS5/J1dSf7vMQAPT4A==",
   "success": true,
-  "projectFilePath": "C:\\.net\\MagicVilla_API\\MagicVilla_webapi\\MagicVilla_webapi.csproj",
+  "projectFilePath": "C:\\.net\\MaGicVilla_API\\MagicVilla_webapi\\MagicVilla_webapi.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ravi.singh_oncehub\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\ravi.singh_oncehub\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.0\\automapper.extensions.microsoft.dependencyinjection.12.0.0.nupkg.sha512",
     "C:\\Users\\ravi.singh_oncehub\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\ravi.singh_oncehub\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",
     "C:\\Users\\ravi.singh_oncehub\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
+    "C:\\Users\\ravi.singh_oncehub\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\5.0.3\\microsoft.aspnetcore.authentication.jwtbearer.5.0.3.nupkg.sha512",
     "C:\\Users\\ravi.singh_oncehub\\.nuget\\packages\\microsoft.aspnetcore.jsonpatch\\7.0.3\\microsoft.aspnetcore.jsonpatch.7.0.3.nupkg.sha512",
     "C:\\Users\\ravi.singh_oncehub\\.nuget\\packages\\microsoft.aspnetcore.mvc.newtonsoftjson\\6.0.0\\microsoft.aspnetcore.mvc.newtonsoftjson.6.0.0.nupkg.sha512",
     "C:\\Users\\ravi.singh_oncehub\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",

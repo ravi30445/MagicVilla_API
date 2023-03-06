@@ -1,21 +1,20 @@
 ﻿using AutoMapper;
-
 using MvcMovie.Models;
 using MvcMovie.Models.Dto;
-using MvcMovie.Services.IServices;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using System.Diagnostics;
 using MvcMovie.models;
+using MvcMovie.Services.IServices;
 
 namespace MvcMovie.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly IVillaService _villaService;
+        private readonly MagicVilla_Web.Services.IServices.IVillaService _villaService;
         private readonly IMapper _mapper;
-        public HomeController(IVillaService villaService, IMapper mapper)
+        public HomeController(MagicVilla_Web.Services.IServices.IVillaService villaService, IMapper mapper)
         {
             _villaService = villaService;
             _mapper = mapper;

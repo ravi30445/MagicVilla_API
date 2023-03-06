@@ -8,6 +8,7 @@ using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.Reflection;
 using MvcMovie.models;
+using MagicVilla_Web.Services.IServices;
 
 namespace MvcMovie.Controllers
 {
