@@ -108,7 +108,7 @@ namespace MagicVilla_webapi.Repository
 
                 }
             }
-            catch(Exception e)
+            catch(Exception )
             {
 
             }

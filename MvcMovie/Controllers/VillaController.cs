@@ -33,8 +33,8 @@ namespace MvcMovie.Controllers
             }
             return View(list);
         }
-        [Authorize(Roles ="admin")]
-        public async Task<IActionResult> CreateVilla()
+        [Authorize(Roles = "admin")]
+        public IActionResult CreateVilla()
         {
             return View();
         }

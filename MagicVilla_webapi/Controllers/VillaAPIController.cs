@@ -14,8 +14,11 @@ using System.Net;
 using Microsoft.AspNetCore.Authorization;
 
 namespace MagicVilla_webapi.Controllers
-{   [Route("api/VillaAPI")]
+{   
+  //  [Route("api/VillaAPI")]
+    [Route("api/v{version:apiVersion}/VillaAPI")]
     [ApiController]
+    [ApiVersion("1.0")]
     public class villaAPIController:ControllerBase{
         protected APIResponse _response;
         private readonly IVillaRepository _dbVilla;

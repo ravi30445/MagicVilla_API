@@ -70,7 +70,7 @@ namespace MvcMovie.Services
                         return returnObj;
                     }
                 }
-                catch (Exception e)
+                catch (Exception)
                 {
                     var exceptionResponse = JsonConvert.DeserializeObject<T>(apiContent);
                     return exceptionResponse;

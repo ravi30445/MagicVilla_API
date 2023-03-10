@@ -13,8 +13,11 @@ using MagicVilla_webapi.models;
 using System.Net;
 
 namespace MagicVilla_webapi.Controllers
-{   [Route("api/VillaNumberAPI")]
+{   
+    //[Route("api/VillaNumberAPI")]
+    [Route("api/v{version:apiVersion}/VillaNumberAPI")]
     [ApiController]
+    [ApiVersion("1.0")]
     public class villaNumberAPIController:ControllerBase{
         protected APIResponse _response;
         private readonly IVillaNumberRepository _dbVillaNumber;
