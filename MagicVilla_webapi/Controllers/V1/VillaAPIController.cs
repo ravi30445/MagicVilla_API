@@ -12,8 +12,9 @@ using MagicVilla_VillaAPI.Repository.IRepostiory;
 using MagicVilla_webapi.models;
 using System.Net;
 using Microsoft.AspNetCore.Authorization;
+using System.Text.Json;
 
-namespace MagicVilla_webapi.Controllers
+namespace MagicVilla_webapi.Controllers.V1
 {   
   //  [Route("api/VillaAPI")]
     [Route("api/v{version:apiVersion}/VillaAPI")]
@@ -33,10 +34,30 @@ namespace MagicVilla_webapi.Controllers
                 _logger=logger;
             }
         [HttpGet]
+        
+        [ResponseCache(CacheProfileName = "Default30")]
         [Authorize]
-        public async Task<ActionResult<APIResponse>> GetVillas(){ 
+        public async Task<ActionResult<APIResponse>> GetVillas([FromQuery(Name ="filterOccupancy")]int? occupancy,
+            [FromQuery] string search, int pageSize = 0, int pageNumber = 1){ 
             try{
-           IEnumerable<Villa> villaList=await _dbVilla.GetAllAsync();
+            IEnumerable<Villa> villaList;
+
+                if (occupancy > 0)
+                {
+                    villaList = await _dbVilla.GetAllAsync(u => u.occupancy == occupancy, pageSize:pageSize,
+                        pageNumber:pageNumber);
+                }
+                else
+                {
+                    villaList = await _dbVilla.GetAllAsync(pageSize:pageSize,
+                        pageNumber:pageNumber);
+                }
+                  if (!string.IsNullOrEmpty(search))
+                {
+                    villaList = villaList.Where(u=>u.name.ToLower().Contains(search));
+                }
+                Pagination pagination=new() {PageNumber=pageNumber,PageSize=pageSize};
+              Response.Headers.Add("X-Pagination",JsonSerializer.Serialize(pagination));  
            _response.Result=_mapper.Map<List<VillaDTO>>(villaList);
            _response.StatusCode=HttpStatusCode.OK;
             return Ok(_response);
@@ -51,6 +72,7 @@ namespace MagicVilla_webapi.Controllers
         [HttpGet("{id:int}",Name ="GetVillas")]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ResponseCache(Duration =30)]
         public async  Task<ActionResult<APIResponse>> GetVillas(int id){
             try{
             if(id==0){

@@ -12,7 +12,7 @@ using MagicVilla_VillaAPI.Repository.IRepostiory;
 using MagicVilla_webapi.models;
 using System.Net;
 
-namespace MagicVilla_webapi.Controllers
+namespace MagicVilla_webapi.Controllers.V1
 {   
     //[Route("api/VillaNumberAPI")]
     [Route("api/v{version:apiVersion}/VillaNumberAPI")]
@@ -33,6 +33,11 @@ namespace MagicVilla_webapi.Controllers
            public villaNumberAPIController(ILogging logger){
                 _logger=logger;
             }
+        [HttpGet("GetString")]
+        public IEnumerable<string> Get()
+        {
+            return new string[] { "String1", "String2" };
+        }
         [HttpGet]
         public async Task<ActionResult<APIResponse>> GetVillaNumber(){ 
             try{
