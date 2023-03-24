@@ -1,10 +1,15 @@
 using MagicVilla_webapi.Models;
 using Microsoft.EntityFrameworkCore;
+using MagicVilla_VillaAPI.Models;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+
 namespace MagicVilla_webapi.data{
-    public class ApplicationDbContext:DbContext{
+    public class ApplicationDbContext:IdentityDbContext<ApplicationUser>{
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options):base(options){
             
         }
+        public DbSet<ApplicationUser> ApplicationUsers { get; set; }
+        public DbSet<LocalUser>LocalUsers{get;set;}
         public DbSet<Villa>Villa{get;set;}
         public DbSet<VillaNumber> VillaNumbers{get;set;}
         protected override void OnModelCreating(ModelBuilder modelBuilder)

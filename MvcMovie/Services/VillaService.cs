@@ -1,10 +1,13 @@
 using MagicVilla_Utility;
+using MagicVilla_Web.Services.IServices;
 using MvcMovie.Models;
 using MvcMovie.Models.Dto;
-using MvcMovie.Services.IServices;
+
+
 namespace MvcMovie.Services
 {
-    public class VillaService:BaseService, IVillaService{
+    public class VillaService: BaseService, IVillaService
+    {
           private readonly IHttpClientFactory _clientFactory;
             private string villaUrl;
 
@@ -68,20 +71,5 @@ namespace MvcMovie.Services
             }) ;
         
     }
-
-        Task<T> IVillaService.CreateAsync<T>(VillaUpdateDTO dto, string token)
-        {
-            throw new NotImplementedException();
-        }
-
-        Task<T> IVillaService.CreateAsync<T>(int id, string token)
-        {
-            throw new NotImplementedException();
-        }
-
-        Task IVillaService.UpdateAsync<T>(VillaUpdateDTO model, string v)
-        {
-            throw new NotImplementedException();
-        }
     }
 }

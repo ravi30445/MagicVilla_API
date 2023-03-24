@@ -95,3 +95,11 @@ C:\.net\MagicVilla_API\MagicVilla_webapi\bin\Debug\net6.0\Serilog.Settings.Confi
 C:\.net\MagicVilla_API\MagicVilla_webapi\bin\Debug\net6.0\Serilog.Sinks.Console.dll
 C:\.net\MagicVilla_API\MagicVilla_webapi\bin\Debug\net6.0\Serilog.Sinks.Debug.dll
 C:\.net\MagicVilla_API\MagicVilla_webapi\bin\Debug\net6.0\Serilog.Sinks.File.dll
+C:\.net\MaGicVilla_API\MagicVilla_webapi\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\.net\MaGicVilla_API\MagicVilla_webapi\bin\Debug\net6.0\Microsoft.AspNetCore.Mvc.Versioning.dll
+C:\.net\MaGicVilla_API\MagicVilla_webapi\bin\Debug\net6.0\Microsoft.AspNetCore.Mvc.Versioning.ApiExplorer.dll
+C:\.net\MaGicVilla_API\MagicVilla_webapi\bin\Debug\net6.0\Microsoft.AspNetCore.Cryptography.Internal.dll
+C:\.net\MaGicVilla_API\MagicVilla_webapi\bin\Debug\net6.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+C:\.net\MaGicVilla_API\MagicVilla_webapi\bin\Debug\net6.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+C:\.net\MaGicVilla_API\MagicVilla_webapi\bin\Debug\net6.0\Microsoft.Extensions.Identity.Core.dll
+C:\.net\MaGicVilla_API\MagicVilla_webapi\bin\Debug\net6.0\Microsoft.Extensions.Identity.Stores.dll

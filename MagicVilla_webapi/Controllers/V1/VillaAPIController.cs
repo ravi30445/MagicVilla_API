@@ -11,10 +11,15 @@ using Microsoft.AspNetCore.Mvc;
 using MagicVilla_VillaAPI.Repository.IRepostiory;
 using MagicVilla_webapi.models;
 using System.Net;
+using Microsoft.AspNetCore.Authorization;
+using System.Text.Json;
 
-namespace MagicVilla_webapi.Controllers
-{   [Route("api/VillaAPI")]
+namespace MagicVilla_webapi.Controllers.V1
+{   
+  //  [Route("api/VillaAPI")]
+    [Route("api/v{version:apiVersion}/VillaAPI")]
     [ApiController]
+    [ApiVersion("1.0")]
     public class villaAPIController:ControllerBase{
         protected APIResponse _response;
         private readonly IVillaRepository _dbVilla;
@@ -29,9 +34,30 @@ namespace MagicVilla_webapi.Controllers
                 _logger=logger;
             }
         [HttpGet]
-        public async Task<ActionResult<APIResponse>> GetVillas(){ 
+        
+        [ResponseCache(CacheProfileName = "Default30")]
+        [Authorize]
+        public async Task<ActionResult<APIResponse>> GetVillas([FromQuery(Name ="filterOccupancy")]int? occupancy,
+            [FromQuery] string search, int pageSize = 0, int pageNumber = 1){ 
             try{
-           IEnumerable<Villa> villaList=await _dbVilla.GetAllAsync();
+            IEnumerable<Villa> villaList;
+
+                if (occupancy > 0)
+                {
+                    villaList = await _dbVilla.GetAllAsync(u => u.occupancy == occupancy, pageSize:pageSize,
+                        pageNumber:pageNumber);
+                }
+                else
+                {
+                    villaList = await _dbVilla.GetAllAsync(pageSize:pageSize,
+                        pageNumber:pageNumber);
+                }
+                  if (!string.IsNullOrEmpty(search))
+                {
+                    villaList = villaList.Where(u=>u.name.ToLower().Contains(search));
+                }
+                Pagination pagination=new() {PageNumber=pageNumber,PageSize=pageSize};
+              Response.Headers.Add("X-Pagination",JsonSerializer.Serialize(pagination));  
            _response.Result=_mapper.Map<List<VillaDTO>>(villaList);
            _response.StatusCode=HttpStatusCode.OK;
             return Ok(_response);
@@ -42,9 +68,11 @@ namespace MagicVilla_webapi.Controllers
             }
             return _response;
         } 
+        [Authorize(Roles ="admin")]
         [HttpGet("{id:int}",Name ="GetVillas")]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ResponseCache(Duration =30)]
         public async  Task<ActionResult<APIResponse>> GetVillas(int id){
             try{
             if(id==0){
@@ -67,14 +95,15 @@ namespace MagicVilla_webapi.Controllers
             return _response;
           
         }
-        [HttpPost()]
+        [HttpPost]
+         
         public async Task<ActionResult<APIResponse>> CreateVilla([FromBody]VillaCreateDTO createDTO){
             // if(!ModelState.IsValid){
             //     return BadRequest(ModelState);
             // }
             try{
             if(await _dbVilla.GetAsync(u=>u.name.ToLower()==createDTO.name.ToLower())!=null){
-                ModelState.AddModelError("CustomError","VillaAlready Exist");
+                ModelState.AddModelError("ErrorMessage","VillaAlready Exist");
             }
             if(createDTO==null){
                 return BadRequest(createDTO);
@@ -101,6 +130,7 @@ namespace MagicVilla_webapi.Controllers
             return _response;
         }  
        [HttpDelete("{id:int}",Name ="DeleteVilla")]
+       [Authorize(Roles ="CUSTOM")]
        public async Task<ActionResult<APIResponse>> DeleteVilla(int id){
          try{
          if(id==0){

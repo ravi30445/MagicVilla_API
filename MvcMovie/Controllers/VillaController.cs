@@ -8,6 +8,7 @@ using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.Reflection;
 using MvcMovie.models;
+using MagicVilla_Web.Services.IServices;
 
 namespace MvcMovie.Controllers
 {
@@ -32,8 +33,8 @@ namespace MvcMovie.Controllers
             }
             return View(list);
         }
-        [Authorize(Roles ="admin")]
-        public async Task<IActionResult> CreateVilla()
+        [Authorize(Roles = "admin")]
+        public IActionResult CreateVilla()
         {
             return View();
         }
